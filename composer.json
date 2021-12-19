@@ -1,0 +1,22 @@
+{
+  "name": "waldhacker/hooksie",
+  "type": "typo3-cms-extension",
+  "description": "",
+  "homepage": "https://typo3.com",
+  "license": ["GPL-2.0-or-later"],
+  "keywords": ["TYPO3 CMS"],
+  "require": {
+    "typo3/cms-core": "dev-main",
+    "typo3/cms-backend": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "Waldhacker\\Hooksie\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "hooksie"
+    }
+  }
+}

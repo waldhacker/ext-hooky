@@ -1,0 +1,21 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+    lang="">
+{fieldInformationHtml}
+<div class="row">
+
+    <f:for each="{events}" as="eventData">
+        <div class="mb-3 col-md-4">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" name="{fieldName}[{eventData.className}]" id="hookEvents_{eventData.className}" {f:if(condition: '{fieldValue.{eventData.className}} == on', then: 'checked="checked"', else: '')}/>
+                <label for="hookEvents_{eventData.className}" class="form-check-label">
+                    <f:translate key="{eventData.label}">{eventData.label}</f:translate>
+                </label>
+            </div>
+                <div class="form-text">
+                    <f:translate key="{eventData.description}">{eventData.description}</f:translate></div>
+        </div>
+    </f:for>
+</div>
+</html>

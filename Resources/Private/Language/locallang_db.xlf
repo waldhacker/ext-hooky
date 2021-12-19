@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-09-13UTC08:12:510">
+        <header>
+            <authorName>Susanne Moog</authorName>
+            <authorEmail>susanne.moog@typo3.com</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="tx_hooksie_hook" resname="tx_hooksie_hook">
+                <source>Webhook</source>
+            </trans-unit>
+            <trans-unit id="tx_hooksie_hook.site" resname="tx_hooksie_hook.site">
+                <source>Site</source>
+            </trans-unit>
+            <trans-unit id="tx_hooksie_hook.site.all" resname="tx_hooksie_hook.site.all">
+                <source>All</source>
+            </trans-unit>
+            <trans-unit id="tx_hooksie_hook.url" resname="tx_hooksie_hook.url">
+                <source>URL</source>
+            </trans-unit>
+            <trans-unit id="tx_hooksie_hook.secret" resname="tx_hooksie_hook.secret">
+                <source>Secret</source>
+            </trans-unit>
+            <trans-unit id="tx_hooksie_hook.events" resname="tx_hooksie_hook.events">
+                <source>Notify when...</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
