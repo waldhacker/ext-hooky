@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\DataHandler;
+namespace Waldhacker\Hooky\DataHandler;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
-use Waldhacker\Hooksie\Events\RecordCreatedEvent;
-use Waldhacker\Hooksie\Events\RecordUpdatedEvent;
+use Waldhacker\Hooky\Events\RecordCreatedEvent;
+use Waldhacker\Hooky\Events\RecordUpdatedEvent;
 
 class PostProcessor
 {

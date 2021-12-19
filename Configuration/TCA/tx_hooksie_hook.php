@@ -2,7 +2,7 @@
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:hooksie/Resources/Private/Language/locallang_db.xlf:tx_hooksie_hook',
+        'title' => 'LLL:EXT:hooky/Resources/Private/Language/locallang_db.xlf:tx_hooky_hook',
         'label' => 'url',
         'crdate' => 'createdon',
         'cruser_id' => 'createdby',
@@ -22,7 +22,7 @@ return [
             'endtime' => 'endtime',
         ],
         'typeicon_classes' => [
-            'default' => 'hooksie',
+            'default' => 'hooky',
         ],
         'searchFields' => 'url',
     ],
@@ -77,7 +77,7 @@ return [
             ],
         ],
         'url' => [
-            'label' => 'LLL:EXT:hooksie/Resources/Private/Language/locallang_db.xlf:tx_hooksie_hook.url',
+            'label' => 'LLL:EXT:hooky/Resources/Private/Language/locallang_db.xlf:tx_hooky_hook.url',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
@@ -93,14 +93,14 @@ return [
             ],
         ],
         'secret' => [
-            'label' => 'LLL:EXT:hooksie/Resources/Private/Language/locallang_db.xlf:tx_hooksie_hook.secret',
+            'label' => 'LLL:EXT:hooky/Resources/Private/Language/locallang_db.xlf:tx_hooky_hook.secret',
             'config' => [
                 'type' => 'input',
                 'max' => 2048,
             ],
         ],
         'events' => [
-            'label' => 'LLL:EXT:hooksie/Resources/Private/Language/locallang_db.xlf:tx_hooksie_hook.events',
+            'label' => 'LLL:EXT:hooky/Resources/Private/Language/locallang_db.xlf:tx_hooky_hook.events',
             'config' => [
                 'type' => 'user',
                 'renderType' => 'hookEvents'

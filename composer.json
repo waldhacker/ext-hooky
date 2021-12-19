@@ -1,5 +1,5 @@
 {
-  "name": "waldhacker/hooksie",
+  "name": "waldhacker/hooky",
   "type": "typo3-cms-extension",
   "description": "",
   "homepage": "https://typo3.com",
@@ -11,12 +11,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Waldhacker\\Hooksie\\": "Classes/"
+      "Waldhacker\\Hooky\\": "Classes/"
     }
   },
   "extra": {
     "typo3/cms": {
-      "extension-key": "hooksie"
+      "extension-key": "hooky"
     }
   }
 }

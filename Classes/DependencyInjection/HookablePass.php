@@ -2,15 +2,15 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\DependencyInjection;
+namespace Waldhacker\Hooky\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
-use Waldhacker\Hooksie\Configuration\HookableEvents;
-use Waldhacker\Hooksie\DTO\HookableEventConfiguration;
-use Waldhacker\Hooksie\FormEngine\HookEventsRenderType;
-use Waldhacker\Hooksie\Listener\EventListener;
+use Waldhacker\Hooky\Configuration\HookableEvents;
+use Waldhacker\Hooky\DTO\HookableEventConfiguration;
+use Waldhacker\Hooky\FormEngine\HookEventsRenderType;
+use Waldhacker\Hooky\Listener\EventListener;
 
 class HookablePass implements CompilerPassInterface
 {

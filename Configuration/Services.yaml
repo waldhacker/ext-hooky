@@ -4,55 +4,55 @@ services:
     autoconfigure: true
     public: false
 
-  Waldhacker\Hooksie\:
+  Waldhacker\Hooky\:
     resource: '../Classes/*'
 
-  Waldhacker\Hooksie\Controller\ListController:
+  Waldhacker\Hooky\Controller\ListController:
     public: true
 
-  Waldhacker\Hooksie\Listener\EventListener:
+  Waldhacker\Hooky\Listener\EventListener:
     tags:
       - name: event.listener
         identifier: 'myListener'
         event: TYPO3\CMS\Core\Mail\Event\AfterMailerInitializationEvent
 
-  Waldhacker\Hooksie\DataHandler\PostProcessor:
+  Waldhacker\Hooky\DataHandler\PostProcessor:
     public: true
 
-  Waldhacker\Hooksie\Events\RecordCreatedEvent:
+  Waldhacker\Hooky\Events\RecordCreatedEvent:
     tags:
-      - name: hooksie.hookable
-        label: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordCreated.label'
-        description: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordCreated.description'
+      - name: hooky.hookable
+        label: 'LLL:EXT:hooky/Resources/Private/Language/hooky.xlf:event.recordCreated.label'
+        description: 'LLL:EXT:hooky/Resources/Private/Language/hooky.xlf:event.recordCreated.description'
 
-  Waldhacker\Hooksie\Events\RecordUpdatedEvent:
+  Waldhacker\Hooky\Events\RecordUpdatedEvent:
     tags:
-      - name: hooksie.hookable
-        label: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordUpdated.label'
-        description: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordUpdated.description'
+      - name: hooky.hookable
+        label: 'LLL:EXT:hooky/Resources/Private/Language/hooky.xlf:event.recordUpdated.label'
+        description: 'LLL:EXT:hooky/Resources/Private/Language/hooky.xlf:event.recordUpdated.description'
 
 
-  Waldhacker\Hooksie\Commands\QueueHooksCommand:
+  Waldhacker\Hooky\Commands\QueueHooksCommand:
     tags:
       - name: 'console.command'
-        command: 'hooksie:hooks:queue'
+        command: 'hooky:hooks:queue'
         description: 'Convert triggered events in corresponding hook messages'
 
 
-  Waldhacker\Hooksie\Commands\SendCommand:
+  Waldhacker\Hooky\Commands\SendCommand:
     tags:
       - name: 'console.command'
-        command: 'hooksie:hooks:send'
+        command: 'hooky:hooks:send'
         description: 'Send hooks from queue'
 
-  querybuilder.tx_hooksie_hook:
+  querybuilder.tx_hooky_hook:
     class: 'TYPO3\CMS\Core\Database\Query\QueryBuilder'
     factory:
       - '@TYPO3\CMS\Core\Database\ConnectionPool'
       - 'getQueryBuilderForTable'
     arguments:
-      - 'tx_hooksie_hook'
+      - 'tx_hooky_hook'
 
-  Waldhacker\Hooksie\Configuration\HookConfigurationService:
+  Waldhacker\Hooky\Configuration\HookConfigurationService:
       arguments:
-        - '@querybuilder.tx_hooksie_hook'
+        - '@querybuilder.tx_hooky_hook'

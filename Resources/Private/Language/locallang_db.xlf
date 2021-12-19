@@ -6,22 +6,22 @@
             <authorEmail>susanne.moog@typo3.com</authorEmail>
         </header>
         <body>
-            <trans-unit id="tx_hooksie_hook" resname="tx_hooksie_hook">
+            <trans-unit id="tx_hooky_hook" resname="tx_hooky_hook">
                 <source>Webhook</source>
             </trans-unit>
-            <trans-unit id="tx_hooksie_hook.site" resname="tx_hooksie_hook.site">
+            <trans-unit id="tx_hooky_hook.site" resname="tx_hooky_hook.site">
                 <source>Site</source>
             </trans-unit>
-            <trans-unit id="tx_hooksie_hook.site.all" resname="tx_hooksie_hook.site.all">
+            <trans-unit id="tx_hooky_hook.site.all" resname="tx_hooky_hook.site.all">
                 <source>All</source>
             </trans-unit>
-            <trans-unit id="tx_hooksie_hook.url" resname="tx_hooksie_hook.url">
+            <trans-unit id="tx_hooky_hook.url" resname="tx_hooky_hook.url">
                 <source>URL</source>
             </trans-unit>
-            <trans-unit id="tx_hooksie_hook.secret" resname="tx_hooksie_hook.secret">
+            <trans-unit id="tx_hooky_hook.secret" resname="tx_hooky_hook.secret">
                 <source>Secret</source>
             </trans-unit>
-            <trans-unit id="tx_hooksie_hook.events" resname="tx_hooksie_hook.events">
+            <trans-unit id="tx_hooky_hook.events" resname="tx_hooky_hook.events">
                 <source>Notify when...</source>
             </trans-unit>
         </body>

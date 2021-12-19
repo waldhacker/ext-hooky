@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Configuration;
+namespace Waldhacker\Hooky\Configuration;
 
-use Waldhacker\Hooksie\DTO\HookableEventConfiguration;
+use Waldhacker\Hooky\DTO\HookableEventConfiguration;
 
 class HookableEvents
 {

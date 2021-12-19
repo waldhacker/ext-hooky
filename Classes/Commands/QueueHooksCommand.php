@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Commands;
+namespace Waldhacker\Hooky\Commands;
 
 use Doctrine\DBAL\DriverManager;
 use Enqueue\Dbal\DbalContext;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use Waldhacker\Hooksie\Configuration\HookConfigurationService;
+use Waldhacker\Hooky\Configuration\HookConfigurationService;
 
 class QueueHooksCommand extends Command
 {

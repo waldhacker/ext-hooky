@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\DTO;
+namespace Waldhacker\Hooky\DTO;
 
 class HookConfiguration
 {

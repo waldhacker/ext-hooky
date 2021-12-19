@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Commands;
+namespace Waldhacker\Hooky\Commands;
 
 use Doctrine\DBAL\DriverManager;
 use Enqueue\Dbal\DbalContext;
@@ -13,8 +13,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\RequestFactory;
-use Waldhacker\Hooksie\Configuration\HookConfigurationService;
-use Waldhacker\Hooksie\DTO\HookConfiguration;
+use Waldhacker\Hooky\Configuration\HookConfigurationService;
+use Waldhacker\Hooky\DTO\HookConfiguration;
 
 class SendCommand extends Command
 {

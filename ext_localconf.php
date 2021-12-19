@@ -1,8 +1,8 @@
 <?php
 
-use Waldhacker\Hooksie\DataHandler\PostProcessor;
-use Waldhacker\Hooksie\DataHandler\PreProcessor;
-use Waldhacker\Hooksie\FormEngine\HookEventsRenderType;
+use Waldhacker\Hooky\DataHandler\PostProcessor;
+use Waldhacker\Hooky\DataHandler\PreProcessor;
+use Waldhacker\Hooky\FormEngine\HookEventsRenderType;
 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1639321484] = [
     'nodeName' => 'hookEvents',

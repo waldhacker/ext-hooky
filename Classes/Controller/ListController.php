@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Controller;
+namespace Waldhacker\Hooky\Controller;
 
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -27,9 +27,9 @@ class ListController
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
         $moduleTemplate = $this->moduleTemplateFactory->create($request);
-        $this->view->setTemplateRootPaths(['EXT:hooksie/Resources/Private/Templates/']);
-        $this->view->setPartialRootPaths(['EXT:hooksie/Resources/Private/Partials/']);
-        $this->view->setLayoutRootPaths(['EXT:hooksie/Resources/Private/Layouts/']);
+        $this->view->setTemplateRootPaths(['EXT:hooky/Resources/Private/Templates/']);
+        $this->view->setPartialRootPaths(['EXT:hooky/Resources/Private/Partials/']);
+        $this->view->setLayoutRootPaths(['EXT:hooky/Resources/Private/Layouts/']);
         $this->view->setTemplate('List');
         $moduleTemplate->setContent($this->view->render());
         return new HtmlResponse($moduleTemplate->renderContent());

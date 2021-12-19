@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Events;
+namespace Waldhacker\Hooky\Events;
 
 class RecordCreatedEvent implements \JsonSerializable
 {

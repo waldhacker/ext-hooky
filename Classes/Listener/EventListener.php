@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Listener;
+namespace Waldhacker\Hooky\Listener;
 
 use Enqueue\Dbal\DbalContext;
 use JsonSerializable;

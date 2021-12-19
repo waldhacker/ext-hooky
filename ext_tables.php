@@ -2,15 +2,15 @@
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
     'site',
-    'hooksie',
+    'hooky',
     'bottom',
     null,
     [
         //'navigationComponentId' => 'TYPO3/CMS/Backend/Tree/FileStorageTreeContainer',
-        'routeTarget' => \Waldhacker\Hooksie\Controller\ListController::class,
+        'routeTarget' => \Waldhacker\Hooky\Controller\ListController::class,
         'access' => 'admin',
-        'name' => 'site_hooksie',
-        'iconIdentifier' => 'hooksie',
-        'labels' => 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf'
+        'name' => 'site_hooky',
+        'iconIdentifier' => 'hooky',
+        'labels' => 'LLL:EXT:hooky/Resources/Private/Language/hooky.xlf'
     ]
 );

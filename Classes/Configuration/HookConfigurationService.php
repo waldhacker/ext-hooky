@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\Configuration;
+namespace Waldhacker\Hooky\Configuration;
 
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
-use Waldhacker\Hooksie\DTO\HookConfiguration;
+use Waldhacker\Hooky\DTO\HookConfiguration;
 
 class HookConfigurationService
 {
@@ -19,7 +19,7 @@ class HookConfigurationService
     {
         $byEvent = [];
         $all = $this->queryBuilder->select('*')
-            ->from('tx_hooksie_hook')
+            ->from('tx_hooky_hook')
             ->execute()
             ->fetchAllAssociative();
         foreach ($all as $hook) {

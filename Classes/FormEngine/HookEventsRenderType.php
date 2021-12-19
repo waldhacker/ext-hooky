@@ -2,14 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooksie\FormEngine;
+namespace Waldhacker\Hooky\FormEngine;
 
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use Waldhacker\Hooksie\Configuration\HookableEvents;
-use Waldhacker\Hooksie\Events\RecordCreatedEvent;
-use Waldhacker\Hooksie\Events\RecordUpdatedEvent;
+use Waldhacker\Hooky\Configuration\HookableEvents;
+use Waldhacker\Hooky\Events\RecordCreatedEvent;
+use Waldhacker\Hooky\Events\RecordUpdatedEvent;
 
 class HookEventsRenderType extends AbstractFormElement
 {
@@ -44,9 +44,9 @@ class HookEventsRenderType extends AbstractFormElement
     private function setupView(): StandaloneView
     {
         $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setTemplateRootPaths(['EXT:hooksie/Resources/Private/Templates/FormEngine/']);
-        $view->setPartialRootPaths(['EXT:hooksie/Resources/Private/Partials/FormEngine/']);
-        $view->setLayoutRootPaths(['EXT:hooksie/Resources/Private/Layouts/FormEngine/']);
+        $view->setTemplateRootPaths(['EXT:hooky/Resources/Private/Templates/FormEngine/']);
+        $view->setPartialRootPaths(['EXT:hooky/Resources/Private/Partials/FormEngine/']);
+        $view->setLayoutRootPaths(['EXT:hooky/Resources/Private/Layouts/FormEngine/']);
         $view->setTemplate('HookEvents');
         return $view;
     }
