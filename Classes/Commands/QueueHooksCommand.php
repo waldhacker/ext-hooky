@@ -36,7 +36,7 @@ class QueueHooksCommand extends Command
 
         while ($message = $consumer->receive(1)) {
             $event = $message->getProperty('event');
-            if ($event && count($hooksByEvents[$event]) > 0) {
+            if ($event && count($hooksByEvents[$event] ?? []) > 0) {
                 foreach ($hooksByEvents[$event] as $hookConfig) {
                     $hookQueue = $context->createQueue('hooks');
                     $body = $message->getBody();

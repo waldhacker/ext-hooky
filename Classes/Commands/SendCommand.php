@@ -40,13 +40,13 @@ class SendCommand extends Command
         $consumer = $context->createConsumer($hookQueue);
         while ($message = $consumer->receive(1)) {
             $hookConfiguration = new HookConfiguration($message->getProperty('url'), $message->getProperty('secret'));
-            $request = $this->requestFactory->createRequest('GET', $hookConfiguration->getUrl());
+            $request = $this->requestFactory->createRequest('POST', $hookConfiguration->getUrl());
             $body = $request->getBody();
             $body->write($message->getBody());
             $request = $request->withBody($body);
             $signature = base64_encode(hash_hmac('sha256', $message->getBody(), $hookConfiguration->getSecret()));
-
             $request = $request->withHeader('X-TYPO3-HookSignature', $signature);
+            $request = $request->withHeader('Content-Type', 'application/json');
             $this->client->sendRequest($request);
 
             $consumer->acknowledge($message);
