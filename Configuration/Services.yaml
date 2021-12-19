@@ -22,11 +22,37 @@ services:
   Waldhacker\Hooksie\Events\RecordCreatedEvent:
     tags:
       - name: hooksie.hookable
-        label: 'LLL:EXT:dashboard/Resources/Private/Language/locallang.xlf:widgets.sysLogErrors.title'
-        description: 'LLL:EXT:dashboard/Resources/Private/Language/locallang.xlf:widgets.sysLogErrors.description'
+        label: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordCreated.label'
+        description: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordCreated.description'
 
   Waldhacker\Hooksie\Events\RecordUpdatedEvent:
     tags:
       - name: hooksie.hookable
-        label: 'Record Updated'
-        description: 'Description'
+        label: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordUpdated.label'
+        description: 'LLL:EXT:hooksie/Resources/Private/Language/hooksie.xlf:event.recordUpdated.description'
+
+
+  Waldhacker\Hooksie\Commands\QueueHooksCommand:
+    tags:
+      - name: 'console.command'
+        command: 'hooksie:hooks:queue'
+        description: 'Convert triggered events in corresponding hook messages'
+
+
+  Waldhacker\Hooksie\Commands\SendCommand:
+    tags:
+      - name: 'console.command'
+        command: 'hooksie:hooks:send'
+        description: 'Send hooks from queue'
+
+  querybuilder.tx_hooksie_hook:
+    class: 'TYPO3\CMS\Core\Database\Query\QueryBuilder'
+    factory:
+      - '@TYPO3\CMS\Core\Database\ConnectionPool'
+      - 'getQueryBuilderForTable'
+    arguments:
+      - 'tx_hooksie_hook'
+
+  Waldhacker\Hooksie\Configuration\HookConfigurationService:
+      arguments:
+        - '@querybuilder.tx_hooksie_hook'
