@@ -10,14 +10,14 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use Waldhacker\Hooky\Configuration\HookConfigurationService;
+use Waldhacker\Hooky\Repository\HookConfigurationRepository;
 
 class QueueHooksCommand extends Command
 {
 
     public function __construct(
         protected ConnectionPool $connectionPool,
-        protected HookConfigurationService $hookConfigurationService,
+        protected HookConfigurationRepository $hookConfigurationService,
     )
     {
         parent::__construct();

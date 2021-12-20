@@ -53,6 +53,9 @@ services:
     arguments:
       - 'tx_hooky_hook'
 
-  Waldhacker\Hooky\Configuration\HookConfigurationService:
+  Waldhacker\Hooky\Repository\HookConfigurationRepository:
       arguments:
         - '@querybuilder.tx_hooky_hook'
+
+  Waldhacker\Hooky\Viewhelpers\JsonDecodeViewHelper:
+    public: true

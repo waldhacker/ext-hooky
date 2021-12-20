@@ -2,13 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace Waldhacker\Hooky\Configuration;
+namespace Waldhacker\Hooky\Repository;
 
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Waldhacker\Hooky\DTO\HookConfiguration;
 
-class HookConfigurationService
+class HookConfigurationRepository
 {
 
     public function __construct(protected QueryBuilder $queryBuilder)
@@ -33,5 +34,18 @@ class HookConfigurationService
             }
         }
         return $byEvent;
+    }
+
+    public function fetchAll(): array
+    {
+        $qb = clone($this->queryBuilder);
+        $qb
+            ->getRestrictions()
+            ->removeAll()
+            ->add(GeneralUtility::makeInstance(DeletedRestriction::class));
+        return $qb->select('*')
+            ->from('tx_hooky_hook')
+            ->execute()
+            ->fetchAllAssociative();
     }
 }

@@ -6,7 +6,6 @@
     'bottom',
     null,
     [
-        //'navigationComponentId' => 'TYPO3/CMS/Backend/Tree/FileStorageTreeContainer',
         'routeTarget' => \Waldhacker\Hooky\Controller\ListController::class,
         'access' => 'admin',
         'name' => 'site_hooky',
