@@ -57,5 +57,5 @@ services:
       arguments:
         - '@querybuilder.tx_hooky_hook'
 
-  Waldhacker\Hooky\Viewhelpers\JsonDecodeViewHelper:
+  Waldhacker\Hooky\ViewHelpers\JsonDecodeViewHelper:
     public: true

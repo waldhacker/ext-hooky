@@ -6,6 +6,7 @@
   "license": ["GPL-2.0-or-later"],
   "keywords": ["TYPO3 CMS"],
   "require": {
+    "php": "8.0",
     "typo3/cms-core": "dev-main",
     "typo3/cms-backend": "dev-main"
   },
