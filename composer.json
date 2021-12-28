@@ -8,8 +8,8 @@
   "require": {
     "php": "^8.0.0 | ^8.1.0",
     "enqueue/dbal": "^0.10.15",
-    "typo3/cms-core": "dev-main",
-    "typo3/cms-backend": "dev-main"
+    "typo3/cms-core": "^11.5@dev || ^12.0.x-dev",
+    "typo3/cms-backend": "^11.5@dev || ^12.0.x-dev"
   },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
@@ -29,7 +29,7 @@
   },
     "scripts": {
         "post-autoload-dump": [
-            "mkdir -p .build/web/typo3conf/ext/", "[ -L .build/web/typo3conf/ext/plausibleio ] || ln -snvf ../../../../. .build/web/typo3conf/ext/plausibleio"
+            "mkdir -p .build/web/typo3conf/ext/", "[ -L .build/web/typo3conf/ext/hooky ] || ln -snvf ../../../../. .build/web/typo3conf/ext/hooky"
         ],
         "ci:lint:php": [
             "phplint -c build/phplint.yaml"
