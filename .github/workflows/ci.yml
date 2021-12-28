@@ -47,9 +47,9 @@ jobs:
 
       - name: CGL
         run: composer run ci:cgl:check
-
-      - name: Psalm
-        run: composer run ci:psalm
+#
+#      - name: Psalm
+#        run: composer run ci:psalm
 
       - name: PHPStan
         run: composer run ci:stan
