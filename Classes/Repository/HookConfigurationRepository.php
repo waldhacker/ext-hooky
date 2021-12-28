@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Repository;
 
@@ -11,7 +11,6 @@ use Waldhacker\Hooky\DTO\HookConfiguration;
 
 class HookConfigurationRepository
 {
-
     public function __construct(protected QueryBuilder $queryBuilder)
     {
     }
@@ -19,13 +18,18 @@ class HookConfigurationRepository
     public function getConfiguredHooksByEvents(): array
     {
         $byEvent = [];
+        /** @var array $all */
         $all = $this->queryBuilder->select('*')
             ->from('tx_hooky_hook')
             ->execute()
             ->fetchAllAssociative();
         foreach ($all as $hook) {
+            $hookEvents = json_decode($hook['events'] ?? '{}', true, 512, JSON_THROW_ON_ERROR);
+            if (!is_array($hookEvents)) {
+                continue;
+            }
             foreach (
-                json_decode($hook['events'] ?? '{}', true, 512, JSON_THROW_ON_ERROR) as $event => $value
+                $hookEvents as $event => $value
             ) {
                 $byEvent[$event][] = new HookConfiguration(
                     $hook['url'],
@@ -38,7 +42,7 @@ class HookConfigurationRepository
 
     public function fetchAll(): array
     {
-        $qb = clone($this->queryBuilder);
+        $qb = clone $this->queryBuilder;
         $qb
             ->getRestrictions()
             ->removeAll()

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Events;
 
@@ -12,7 +12,7 @@ class RecordUpdatedEvent implements \JsonSerializable
 
     public function jsonSerialize(): array
     {
-       return [
+        return [
            'action' => 'update',
            'id' => $this->id,
            'table' => $this->table,

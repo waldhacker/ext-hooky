@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Controller;
 
@@ -11,18 +11,16 @@ use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
-use TYPO3\CMS\Core\Http\HtmlResponse;
+use TYPO3\CMS\Core\Http\NormalizedParams;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use Waldhacker\Hooky\Repository\HookConfigurationRepository;
 
 class ListController
 {
-
     protected LanguageService $languageService;
 
     public function __construct(
@@ -33,8 +31,7 @@ class ListController
         protected IconFactory $iconFactory,
         protected LanguageServiceFactory $languageServiceFactory,
         protected UriBuilder $uriBuilder,
-    )
-    {
+    ) {
         $this->languageService = $this->languageServiceFactory->createFromUserPreferences($GLOBALS['BE_USER']);
     }
 
@@ -57,9 +54,6 @@ class ListController
         return $response;
     }
 
-    /**
-     * @return void
-     */
     private function setupView(): void
     {
         $this->view->setTemplateRootPaths(['EXT:hooky/Resources/Private/Templates/']);
@@ -67,7 +61,6 @@ class ListController
         $this->view->setLayoutRootPaths(['EXT:hooky/Resources/Private/Layouts/']);
         $this->view->setTemplate('List');
     }
-
 
     /**
      * Create document header buttons
@@ -94,8 +87,10 @@ class ListController
         $buttonBar->addButton($newRecordButton, ButtonBar::BUTTON_POSITION_LEFT, 10);
 
         // Reload
+        /** @var NormalizedParams $normalizedParams */
+        $normalizedParams = $request->getAttribute('normalizedParams');
         $reloadButton = $buttonBar->makeLinkButton()
-            ->setHref($request->getAttribute('normalizedParams')->getRequestUri())
+            ->setHref($normalizedParams->getRequestUri())
             ->setTitle($this->languageService->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.reload'))
             ->setIcon($this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL));
         $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT);

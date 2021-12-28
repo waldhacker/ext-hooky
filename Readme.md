@@ -24,8 +24,8 @@ to listen to.
 Use the following two commands (ideally run regularly via scheduler, cron or system.d)
 to trigger processing of the message queue and message sending:
 
-#. `./bin/typo3 hooky:hooks:queue` - will check whether there are hooks configured for events that occurred and queue a message for each configured hook.
-#. `./bin/typo3 hooky:hooks:send` - will process the queue and send the hook requests
+- `./bin/typo3 hooky:hooks:queue` - will check whether there are hooks configured for events that occurred and queue a message for each configured hook.
+- `./bin/typo3 hooky:hooks:send` - will process the queue and send the hook requests
 
 ### Hook Signing
 
@@ -40,8 +40,8 @@ Example:
 
 An event that triggers a hook needs to fulfil two requirements:
 
-#. it needs to implement the interface `JsonSerializable`
-#. it needs to be tagged as hookable event in the DI configuration
+- it needs to implement the interface `JsonSerializable`
+- it needs to be tagged as hookable event in the DI configuration
 
 The data that is returned by jsonSerialize will be the data enclosed in the message
 body of the web hook.

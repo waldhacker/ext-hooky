@@ -1,0 +1,15 @@
+.build/
+.idea/
+.php_cs.cache
+.php-cs-fixer.cache
+.phplint-cache
+.phplint.cache
+.phpunit.cache
+.phpunit.result.cache
+build/.cache/
+build/JavaScript
+build/node_modules/
+build/yarn-error.log
+composer.lock
+Documentation-GENERATED-temp
+var/

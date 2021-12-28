@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Commands;
 
@@ -14,12 +14,10 @@ use Waldhacker\Hooky\Repository\HookConfigurationRepository;
 
 class QueueHooksCommand extends Command
 {
-
     public function __construct(
         protected ConnectionPool $connectionPool,
         protected HookConfigurationRepository $hookConfigurationService,
-    )
-    {
+    ) {
         parent::__construct();
     }
 

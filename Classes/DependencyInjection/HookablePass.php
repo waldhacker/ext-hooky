@@ -1,25 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Reference;
 use Waldhacker\Hooky\Configuration\HookableEvents;
-use Waldhacker\Hooky\DTO\HookableEventConfiguration;
-use Waldhacker\Hooky\FormEngine\HookEventsRenderType;
 use Waldhacker\Hooky\Listener\EventListener;
 
 class HookablePass implements CompilerPassInterface
 {
     public function __construct(protected string $tag)
     {
-
     }
 
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $hookableEvents = [];
         $definition = $container->getDefinition(EventListener::class);

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\DTO;
 
@@ -9,9 +9,7 @@ class HookConfiguration
     public function __construct(
         protected string $url,
         protected string $secret
-    )
-    {
-
+    ) {
     }
 
     public function getUrl(): string
@@ -23,5 +21,4 @@ class HookConfiguration
     {
         return $this->secret;
     }
-
 }

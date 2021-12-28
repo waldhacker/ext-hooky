@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Listener;
 
@@ -12,7 +12,6 @@ class EventListener
 {
     public function __construct(protected ConnectionPool $connectionPool)
     {
-
     }
 
     public function __invoke(JsonSerializable $event): void
@@ -28,5 +27,4 @@ class EventListener
 
         $context->createProducer()->send($queue, $message);
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\FormEngine;
 
@@ -8,12 +8,9 @@ use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use Waldhacker\Hooky\Configuration\HookableEvents;
-use Waldhacker\Hooky\Events\RecordCreatedEvent;
-use Waldhacker\Hooky\Events\RecordUpdatedEvent;
 
 class HookEventsRenderType extends AbstractFormElement
 {
-
     public function render(): array
     {
         $view = $this->setupView();
@@ -27,7 +24,9 @@ class HookEventsRenderType extends AbstractFormElement
         $fieldInformationHtml = $fieldInformationResult['html'];
         $resultArray = $this->mergeChildReturnIntoExistingResult($resultArray, $fieldInformationResult, false);
 
-       $hookableEvents = GeneralUtility::makeInstance(HookableEvents::class)->get();
+        /** @var HookableEvents $hookableEventsCollection */
+        $hookableEventsCollection = GeneralUtility::makeInstance(HookableEvents::class);
+        $hookableEvents = $hookableEventsCollection->get();
         $view->assignMultiple(
             [
                 'fieldInformation' => $fieldInformationHtml,
@@ -43,6 +42,7 @@ class HookEventsRenderType extends AbstractFormElement
 
     private function setupView(): StandaloneView
     {
+        /** @var StandaloneView $view */
         $view = GeneralUtility::makeInstance(StandaloneView::class);
         $view->setTemplateRootPaths(['EXT:hooky/Resources/Private/Templates/FormEngine/']);
         $view->setPartialRootPaths(['EXT:hooky/Resources/Private/Partials/FormEngine/']);

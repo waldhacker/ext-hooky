@@ -1,0 +1,37 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$message of method Enqueue\\\\Dbal\\\\DbalConsumer\\:\\:acknowledge\\(\\) expects Enqueue\\\\Dbal\\\\DbalMessage, Interop\\\\Queue\\\\Message given\\.$#"
+			count: 1
+			path: ../Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Parameter \\#2 \\$message of method Enqueue\\\\Dbal\\\\DbalProducer\\:\\:send\\(\\) expects Enqueue\\\\Dbal\\\\DbalMessage, Interop\\\\Queue\\\\Message given\\.$#"
+			count: 1
+			path: ../Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$message of method Enqueue\\\\Dbal\\\\DbalConsumer\\:\\:acknowledge\\(\\) expects Enqueue\\\\Dbal\\\\DbalMessage, Interop\\\\Queue\\\\Message given\\.$#"
+			count: 1
+			path: ../Classes/Commands/SendCommand.php
+
+		-
+			message: "#^Method Waldhacker\\\\Hooky\\\\DataHandler\\\\PostProcessor\\:\\:processDatamap_afterDatabaseOperations\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: ../Classes/DataHandler/PostProcessor.php
+
+		-
+			message: "#^Parameter \\#2 \\$message of method Enqueue\\\\Dbal\\\\DbalProducer\\:\\:send\\(\\) expects Enqueue\\\\Dbal\\\\DbalMessage, Interop\\\\Queue\\\\Message given\\.$#"
+			count: 1
+			path: ../Classes/Listener/EventListener.php
+
+		-
+			message: "#^Cannot call method fetchAllAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+			count: 2
+			path: ../Classes/Repository/HookConfigurationRepository.php
+
+		-
+			message: "#^Parameter \\#1 \\$restriction of method TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\Restriction\\\\QueryRestrictionContainerInterface\\:\\:add\\(\\) expects TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\Restriction\\\\QueryRestrictionInterface, object given\\.$#"
+			count: 1
+			path: ../Classes/Repository/HookConfigurationRepository.php
+

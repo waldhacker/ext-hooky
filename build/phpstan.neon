@@ -1,0 +1,9 @@
+includes:
+	- phpstan-baseline.neon
+parameters:
+	checkMissingIterableValueType: false
+	level: max
+	paths:
+		- ../Classes
+	bootstrapFiles:
+		- ../.build/vendor/autoload.php

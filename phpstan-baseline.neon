@@ -1,0 +1,107 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to method createConsumer\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Call to method createMessage\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Call to method createProducer\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Call to method createQueue\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 2
+			path: Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Instantiated class Enqueue\\\\Dbal\\\\DbalContext not found\\.$#"
+			count: 1
+			path: Classes/Commands/QueueHooksCommand.php
+
+		-
+			message: "#^Call to method createConsumer\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Commands/SendCommand.php
+
+		-
+			message: "#^Call to method createQueue\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Commands/SendCommand.php
+
+		-
+			message: "#^Instantiated class Enqueue\\\\Dbal\\\\DbalContext not found\\.$#"
+			count: 1
+			path: Classes/Commands/SendCommand.php
+
+		-
+			message: "#^Method Waldhacker\\\\Hooky\\\\DataHandler\\\\PostProcessor\\:\\:processDatamap_afterDatabaseOperations\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: Classes/DataHandler/PostProcessor.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:setLayoutRootPaths\\(\\)\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:setPartialRootPaths\\(\\)\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:setTemplate\\(\\)\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:setTemplateRootPaths\\(\\)\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Method Waldhacker\\\\Hooky\\\\FormEngine\\\\HookEventsRenderType\\:\\:setupView\\(\\) should return TYPO3\\\\CMS\\\\Fluid\\\\View\\\\StandaloneView but returns object\\.$#"
+			count: 1
+			path: Classes/FormEngine/HookEventsRenderType.php
+
+		-
+			message: "#^Call to method createMessage\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Listener/EventListener.php
+
+		-
+			message: "#^Call to method createProducer\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Listener/EventListener.php
+
+		-
+			message: "#^Call to method createQueue\\(\\) on an unknown class Enqueue\\\\Dbal\\\\DbalContext\\.$#"
+			count: 1
+			path: Classes/Listener/EventListener.php
+
+		-
+			message: "#^Instantiated class Enqueue\\\\Dbal\\\\DbalContext not found\\.$#"
+			count: 1
+			path: Classes/Listener/EventListener.php
+
+		-
+			message: "#^Cannot call method fetchAllAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+			count: 2
+			path: Classes/Repository/HookConfigurationRepository.php
+
+		-
+			message: "#^Parameter \\#1 \\$restriction of method TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\Restriction\\\\QueryRestrictionContainerInterface\\:\\:add\\(\\) expects TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\Restriction\\\\QueryRestrictionInterface, object given\\.$#"
+			count: 1
+			path: Classes/Repository/HookConfigurationRepository.php
+

@@ -1,31 +1,28 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\Commands;
 
 use Doctrine\DBAL\DriverManager;
 use Enqueue\Dbal\DbalContext;
 use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\RequestFactory;
-use Waldhacker\Hooky\Repository\HookConfigurationRepository;
 use Waldhacker\Hooky\DTO\HookConfiguration;
+use Waldhacker\Hooky\Repository\HookConfigurationRepository;
 
 class SendCommand extends Command
 {
-
     public function __construct(
         protected ConnectionPool $connectionPool,
         protected HookConfigurationRepository $hookConfigurationService,
         protected RequestFactory $requestFactory,
         protected ClientInterface $client,
-    )
-    {
+    ) {
         parent::__construct();
     }
 

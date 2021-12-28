@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\DataHandler;
 
@@ -13,7 +13,6 @@ class PostProcessor
 {
     public function __construct(protected EventDispatcherInterface $dispatcher)
     {
-
     }
 
     public function processDatamap_afterDatabaseOperations(string $status, string $table, $id, array $fieldArray, DataHandler $datahandler): void
@@ -30,5 +29,4 @@ class PostProcessor
                 break;
         }
     }
-
 }

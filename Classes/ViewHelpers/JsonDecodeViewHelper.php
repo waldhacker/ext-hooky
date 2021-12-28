@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Waldhacker\Hooky\ViewHelpers;
 
@@ -16,5 +16,4 @@ class JsonDecodeViewHelper extends AbstractViewHelper
     ) {
         return json_decode($renderChildrenClosure(), true, 512, JSON_THROW_ON_ERROR);
     }
-
 }
